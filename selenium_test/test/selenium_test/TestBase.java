@@ -19,7 +19,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class Test12 {
+public class TestBase {
 
 	/* *
 	 *  TASK:
@@ -134,10 +134,11 @@ public class Test12 {
 			jse.executeScript( "window.scrollBy( 0, " + y + " )" ); 
 			
 			
-			// Country ver.1
+			// Country by picking from the list
 			driver.findElement(By.xpath( "//label[contains(.,'Country')]/following-sibling::div//a[contains(.,'Select an Option')]/div" )).click();
 			driver.findElement(By.xpath( "//li[contains(.,'" + localLead.getCountry().toString() + "')]" )).click();
-			/*
+			
+			/* used in case of typing down Coutry's name
 			driver.findElement(By.xpath("//div[@id='" + id + "']//input")).clear();
 			driver.findElement(By.xpath("//div[@id='" + id + "']//input")).sendKeys( "Poland" );
 			driver.findElement(By.xpath("//div[@id='" + id + "']//input")).sendKeys( Keys.RETURN );
